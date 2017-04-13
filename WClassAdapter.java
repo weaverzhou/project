@@ -13,7 +13,6 @@ public class WClassAdapter extends ClassAdapter {
     public WClassAdapter(ClassVisitor cv, String className, String targetClassName, String[] methods) {
         super(cv);
         this.methods = methods;
-         this.className = className;
         this.className = className;
         this.targetClassName = targetClassName;
     }
@@ -26,7 +25,7 @@ public class WClassAdapter extends ClassAdapter {
         } else {
             for (int i = 2; i < methods.length; i++) {
                 String[] ma = methods[i].split("=");
-                // System.out.println("name + desc=" + (name + desc));
+               
                 if ((name + desc).equals(ma[0])) {
                     return new WAdviceAdapter(mv, access, this.className, this.targetClassName, name, ma[1], desc, signature, exceptions);
                 }
