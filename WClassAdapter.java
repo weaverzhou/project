@@ -13,6 +13,7 @@ public class WClassAdapter extends ClassAdapter {
     public WClassAdapter(ClassVisitor cv, String className, String targetClassName, String[] methods) {
         super(cv);
         this.methods = methods;
+         this.className = className;
         this.className = className;
         this.targetClassName = targetClassName;
     }
